@@ -13,8 +13,8 @@ pipeline {
         }
         stage('Push Image') {
             steps {
-				withCredentials([usernamePassword(credentialsId: 'dockerhub_creds'), passwordVariable: 'pass', usernameVariable: 'user']){
-					bat "docker login --username=${user} --password=${pass}"
+				withCredentials([usernamePassword(credentialsId: 'dockerhub_creds'), passwordVariable: 'pas', usernameVariable: 'user']){
+					bat "docker login --username=${user} --password=${pas}"
 					bat "docker push terrofan/selenium-docker:latest"
 				}
             }
